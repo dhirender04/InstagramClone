@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/edtEnterEmail"
+        android:hint="Enter the Email Address"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="18dp"/>
+<EditText
+    android:id="@+id/edtUserName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Enter the User Name"
+    app:layout_constraintTop_toBottomOf="@+id/edtEnterEmail"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_margin="18dp"/>
+    <EditText
+        android:id="@+id/edtUserPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter the Password"
+        app:layout_constraintTop_toBottomOf="@+id/edtUserName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="18dp"
+        android:inputType="numberPassword"/>
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textSize="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="#ffff"
+        app:layout_constraintTop_toBottomOf="@id/edtUserPassword"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_margin="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogIN"
+        />
+    <Button
+        android:id="@+id/btnLogIN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOG IN"
+        android:background="@color/colorAccent"
+        android:textColor="#ffff"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="34dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
