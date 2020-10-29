@@ -54,7 +54,8 @@ private Button btnSignUp,btnLogIn;
         btnLogIn.setOnClickListener(this);
 
         if (ParseUser.getCurrentUser()!=null) {
-            ParseUser.getCurrentUser().logOut();
+//            ParseUser.getCurrentUser().logOut();
+            transitionToSocialMediaActivity();
         }
 
 
@@ -71,6 +72,7 @@ private Button btnSignUp,btnLogIn;
                         edtPassword.getText().toString().equals("")){
                     FancyToast.makeText(MainActivity.this,  "Email, Username,Password is required",
                             Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+
                 }else {
 
                     final ParseUser appUser = new ParseUser();
@@ -89,6 +91,7 @@ private Button btnSignUp,btnLogIn;
                             if (e == null) {
                                 FancyToast.makeText(MainActivity.this, appUser.getUsername() + "is signed up",
                                         Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                transitionToSocialMediaActivity();
                             } else {
                                 FancyToast.makeText(MainActivity.this, "There was an error:" + e.getMessage(),
                                         Toast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
@@ -119,5 +122,10 @@ private Button btnSignUp,btnLogIn;
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    private void transitionToSocialMediaActivity(){
+        Intent intent=new Intent(MainActivity.this,SocialMediaActivity.class);
+        startActivity(intent);
     }
 }

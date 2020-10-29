@@ -68,6 +68,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                                     FancyToast.makeText(LoginActivity.this, user.getUsername() + "is signed up",
                                             Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                    transitionToSocialMediaActivity();
                                 }
                                 else {
                                     FancyToast.makeText(LoginActivity.this,"There was an error:"+e.getMessage(),
@@ -95,5 +96,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             e.printStackTrace();
         }
 
+    }
+
+    private void transitionToSocialMediaActivity(){
+        Intent intent=new Intent(LoginActivity.this,SocialMediaActivity.class);
+        startActivity(intent);
     }
 }
